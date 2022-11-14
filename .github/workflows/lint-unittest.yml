@@ -1,0 +1,47 @@
+name: Lint-UnitTest
+
+on:
+    pull_request:
+
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
+
+jobs:
+    configure:
+        runs-on: ubuntu-latest
+        outputs:
+            uid_gid: ${{ steps.get-user.outputs.uid_gid }}
+        steps:
+            -   id: get-user
+                run: echo "::set-output name=uid_gid::$(id -u):$(id -g)"
+    lint-unittest:
+        # The type of runner that the job will run on
+        needs: configure
+        runs-on: ubuntu-latest
+        container:
+            image: circleci/node:12-browsers
+            options: --user ${{ needs.configure.outputs.uid_gid }}
+
+        steps:
+            # Checks-out your repository under $GITHUB_WORKSPACE
+            - uses: actions/checkout@v2
+
+            # Install Dependencies
+            - name: Install dependencies
+              run: npm install -q
+
+            # Prettier the source code
+            - name: Formatting
+              run: npm run prettier:check
+
+            # Lint the source code
+            - name: Linting
+              run: npm run lint
+
+            # Build the source code
+            - name: Build
+              run: npm run build
+
+            # Unit Testing with coverage
+            - name: Unit Testing
+              run: npm run test:cov
