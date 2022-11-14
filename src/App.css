@@ -1,38 +1,143 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page-wrapper {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: content-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+  width: 5rem !important;
+  height: 5rem !important;
+}
+
+.fahrenheit {
+  width: 4rem !important;
+  height: 4rem !important;
+  margin: 0 0 0 2rem;
+}
+
+.kelvin {
+  width: 5rem !important;
+  height: 5rem !important;
+}
+
+.rankine {
+  width: 10rem !important;
+  height: 3.5rem !important;
+  margin-left: -1.5rem;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: black;
+  margin: 1rem 0;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: black;
+}
+
+.form-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-size: 0.75rem;
+  text-align: left;
+}
+
+.text-input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.input {
+  border: 2px solid black;
+  border-radius: 4px;
+  color: black;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: white;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  outline: none;
+  height: 2.75rem;
+  padding: 0 0.75rem;
+}
+
+.input::placeholder {
+  font-weight: 300;
+  color: black;
+}
+
+.input:focus {
+  border-color: black;
+  box-shadow: 0 0 0 3px grey;
+}
+
+.radio-container {
+  display: flex;
+}
+
+.radio {
+  margin-right: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.submit {
+  background: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  color: black;
+  cursor: pointer;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+}
+
+.submit:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.submit:active {
+  opacity: 0.4;
 }
