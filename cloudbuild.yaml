@@ -17,3 +17,6 @@ steps:
    args: ['beta', 'run', 'deploy', 'unit-conversion-frontend', '--image', 'gcr.io/$PROJECT_ID/unit-conversion-frontend:latest', '--region', 'europe-west1', '--platform', 'managed', '--allow-unauthenticated']
 images:
  - 'gcr.io/$PROJECT_ID/unit-conversion-frontend'
+serviceAccount: 'projects/$PROJECT_ID/serviceAccounts/cicdterraformsvc@secure-proxy-367022.iam.gserviceaccount.com'
+options:
+  logging: CLOUD_LOGGING_ONLY
