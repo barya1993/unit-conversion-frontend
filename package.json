@@ -15,7 +15,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:cov": "react-scripts test --watchAll=false --coverage",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "prettier:check": "prettier -c './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "prettier:fix": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +39,27 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.10",
+    "prettier": "^2.7.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/reportWebVitals.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 80
+      }
+    }
   }
 }

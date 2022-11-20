@@ -42,7 +42,6 @@ function App() {
       event.preventDefault();
     }
     const convertedTemp = convertTemperature(tempIn, tempOut, valueIn);
-    console.log(convertedTemp, typeof valueOut, parseFloat(valueOut, 10));
     if (parseFloat(valueOut, 10) === parseFloat(convertedTemp, 10)) {
       setAnswer('Correct');
     } else {
