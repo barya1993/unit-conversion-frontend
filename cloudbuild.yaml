@@ -12,7 +12,6 @@ steps:
 # Push the docker image to container registry
  - name: 'gcr.io/cloud-builders/docker'
    args: ["push", "gcr.io/$PROJECT_ID/unit-conversion-frontend"]
-
 # Deploy an image from Container Registry to Cloud Run
  - name: 'gcr.io/cloud-builders/gcloud'
    args: ['beta', 'run', 'deploy', 'unit-conversion-frontend', '--image', 'gcr.io/$PROJECT_ID/unit-conversion-frontend:latest', '--region', 'europe-west1', '--platform', 'managed', '--allow-unauthenticated']
