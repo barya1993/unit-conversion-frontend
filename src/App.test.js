@@ -1,15 +1,15 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import App from './App';
 
 jest.mock('./services/TempratureService', () => ({
-  convertTemperature: (from, to, input) => '100'
+  convertTemperature: () => '100'
 }));
 
 describe('<App />', () => {
   it('Renders <App /> component correctly', () => {
-    const { getByText } = render(<App />);
-    expect(screen.getByText(/Temperature Unit Conversion/i)).toBeInTheDocument();
-    expect(screen.getByRole('heading')).toHaveTextContent(/Temperature Unit Conversion/);
+    const { getByText, getByRole } = render(<App />);
+    expect(getByText(/Temperature Unit Conversion/i)).toBeInTheDocument();
+    expect(getByRole('heading')).toHaveTextContent(/Temperature Unit Conversion/);
   });
 
   it('Test input change correctly', () => {
