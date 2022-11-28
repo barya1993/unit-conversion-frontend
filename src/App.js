@@ -4,10 +4,10 @@ import { ReactComponent as KelvinLogo } from './assets/kelvin-logo.svg';
 import { ReactComponent as FahrenheitLogo } from './assets/fahrenheit-logo.svg';
 import { ReactComponent as RankineLogo } from './assets/rankine-logo.svg';
 import './App.css';
-import { convertTemperature } from './services/TempratureService';
+import { convertTemperature } from './services/TemperatureService';
 
 function App() {
-  const tempratureUnits = ['Kelvin', 'Celcius', 'Fahrenheit', 'Rankine'];
+  const tempratureUnits = ['Kelvin', 'Celsius', 'Fahrenheit', 'Rankine'];
 
   const [tempIn, setTempIn] = useState('Kelvin');
   const [tempOut, setTempOut] = useState('Kelvin');
@@ -17,17 +17,21 @@ function App() {
 
   const isSubmitEnabled = valueIn.length > 0 && valueOut.length > 0;
 
+  const clearAnswer = () => setAnswer('');
+
   const onChangeValueIn = (event) => {
     const value = event.currentTarget.value;
     setValueIn(value);
   };
 
   const handleTempInChange = (event) => {
+    clearAnswer();
     const value = event.target.value;
     setTempIn(value);
   };
 
   const handleTempOutChange = (event) => {
+    clearAnswer();
     const value = event.target.value;
     setTempOut(value);
   };
@@ -42,6 +46,7 @@ function App() {
       event.preventDefault();
     }
     const convertedTemp = convertTemperature(tempIn, tempOut, valueIn);
+    console.log(convertedTemp);
     if (parseFloat(valueOut, 10) === parseFloat(convertedTemp, 10)) {
       setAnswer('Correct');
     } else {
@@ -71,10 +76,11 @@ function App() {
               <input
                 aria-label="temp-input"
                 className="input"
-                type="text"
+                type="number"
                 placeholder="Enter temperature value"
                 value={valueIn}
                 onChange={onChangeValueIn}
+                onFocus={clearAnswer}
               />
             </div>
             <label className="form-label">Temprature unit</label>
@@ -114,19 +120,22 @@ function App() {
               <input
                 aria-label="temp-output"
                 className="input"
-                type="text"
+                type="number"
                 placeholder="Enter temperature value"
                 value={valueOut}
                 onChange={onChangeValueOut}
+                onFocus={clearAnswer}
               />
             </div>
-            <div>
+            <div className="button-container">
               <input disabled={!isSubmitEnabled} className="input" type="submit" value="Submit" />
             </div>
+            {answer !== '' ? (
+              <div className={answer === 'Correct' ? 'correct' : 'incorrect'}>{answer}</div>
+            ) : (
+              <></>
+            )}
           </form>
-        </div>
-        <div data-testid="answer">
-          {answer !== '' ? <div data-testid="answer">{answer}</div> : <></>}
         </div>
       </div>
     </div>

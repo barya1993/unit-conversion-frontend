@@ -1,7 +1,7 @@
 import { render, fireEvent } from '@testing-library/react';
 import App from './App';
 
-jest.mock('./services/TempratureService', () => ({
+jest.mock('./services/TemperatureService', () => ({
   convertTemperature: () => '100'
 }));
 
@@ -41,21 +41,14 @@ describe('<App />', () => {
   });
 
   it('Test submit button disable correctly', () => {
-    const { getByTestId, getByRole, getByLabelText } = render(<App />);
+    const { getByRole, getByLabelText } = render(<App />);
     const input = getByLabelText('temp-input');
     const output = getByLabelText('temp-output');
     const button = getByRole('button', { name: 'Submit' });
-    const answer = getByTestId('answer');
 
     expect(button).toBeDisabled();
     fireEvent.change(input, { target: { value: '100' } });
     fireEvent.change(output, { target: { value: '100' } });
     expect(button).toBeEnabled();
-    fireEvent.click(button);
-    expect(answer).toBeInTheDocument();
-    fireEvent.change(input, { target: { value: '0' } });
-    fireEvent.change(output, { target: { value: '100' } });
-    fireEvent.click(button);
-    expect(answer).toBeInTheDocument();
   });
 });
