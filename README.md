@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+
+# Getting Started with Temperature Unit Conversion
+
+## Problem Statement
+
+Our users are science teachers who are comfortable using the command line, a ReST API, or a
+browser. In their “Unit Conversion” science unit, they want to assign students unit-conversion
+problems on paper worksheets. After students turn in their completed worksheet, the teachers
+want to be able to enter the questions and student responses into a computer to be graded.
+Students will convert:
+1. temperatures between Kelvin, Celsius, Fahrenheit, and Rankine
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,7 +16,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,10 +24,22 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### `npm run test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run lint:check`
+### `npm run lint:fix`
+
+Statically analyzes your code with ESLint to quickly find problems.\
+See the section about [eslint](https://eslint.org/docs/latest/) for more information.
+
+### `npm run prettier:check`
+### `npm run prettier:fix`
+
+Enforce a consistent style by parsing your code and formatting it as per defined rules with Prettier.\
+See the section about [prettier](https://prettier.io/docs/en/) for more information.
 
 ### `npm run build`
 
@@ -68,3 +90,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Infrastructure as Code
+
+https://github.com/barya1993/unit-conversion-terraform
+
+### Synopsis
+
+    - Frontend is containerized and deployed on GCP cloud run.
+    - Single click deployment pipeline is created for both frontend and terraform.
+    - All underlying GCP infrastructure is created with Terraform - Cloud Build, Cloud Run, Google Bucket, Load Balancer, Network Endpoint Group.
+    - Frontend is behind the load balancer with the capacity to route the traffic closest to the user location.
+
+Application endpoint (external facing - publicly available): http://34.160.97.48
+
+## Development prioritization in near future:
+
+    1. Implementation and Integration of logs, monitoring alerts - use of CloudMonitoring, Datadog, ELK.
+
+    2. Implementation of Authentication based User access in the Cloud Run to make it more secure.
+
+    3. Make Terraform workspaces for commonly used components for reusability of code.
+
+    4. Improve the CI pipeline of terraform to make it more reliable.
+
+    5. Enable CI/CD to have multiple environments like Lates, Stage, Load, Prod
+
+    6. Integrate and use artifact repo for code artifacts - to enable faster recovery/restore
+
+    7. Proper versioning of code, docker images, terraform
+
+    8. Depending on application requirement, implementation of DR

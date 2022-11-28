@@ -36,7 +36,7 @@ jobs:
 
             # Lint the source code
             - name: Linting
-              run: npm run lint
+              run: npm run lint:check
 
             # Build the source code
             - name: Build
