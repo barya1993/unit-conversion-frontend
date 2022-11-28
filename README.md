@@ -8,7 +8,7 @@ browser. In their “Unit Conversion” science unit, they want to assign studen
 problems on paper worksheets. After students turn in their completed worksheet, the teachers
 want to be able to enter the questions and student responses into a computer to be graded.
 Students will convert:
-1. temperatures between Kelvin, Celsius, Fahrenheit, and Rankine
+1. Temperatures between Kelvin, Celsius, Fahrenheit, and Rankine
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
