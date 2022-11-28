@@ -17,7 +17,7 @@
     "test": "react-scripts test",
     "test:cov": "react-scripts test --watchAll=false --coverage",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
+    "lint:check": "eslint .",
     "lint:fix": "eslint --fix",
     "prettier:check": "prettier -c './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "prettier:fix": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
