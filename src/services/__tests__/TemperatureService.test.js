@@ -1,4 +1,4 @@
-import { convertTemperature } from '../TempratureService.js';
+import { convertTemperature } from '../TemperatureService.js';
 
 describe('Temprature Service', () => {
   it('Converts temprature correctly', () => {
