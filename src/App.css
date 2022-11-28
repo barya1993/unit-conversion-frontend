@@ -121,11 +121,15 @@
   margin-bottom: 2rem;
 }
 
+.button-container {
+  margin-bottom: 24px;
+}
+
 .submit {
   background: none;
   outline: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 10px 0;
   border: none;
   color: black;
   cursor: pointer;
@@ -140,4 +144,16 @@
 
 .submit:active {
   opacity: 0.4;
+}
+
+.correct {
+  padding: 30px;
+  border: 1px solid green;
+  background: lightgreen;
+}
+
+.incorrect {
+  padding: 30px;
+  border: 1px solid red;
+  background: pink;
 }

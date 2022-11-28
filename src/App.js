@@ -127,13 +127,17 @@ function App() {
                 onFocus={clearAnswer}
               />
             </div>
-            <div>
+            <div className="button-container">
               <input disabled={!isSubmitEnabled} className="input" type="submit" value="Submit" />
             </div>
+            {answer !== '' ? (
+              <div data-testid="answer" className={answer === 'Correct' ? 'correct' : 'incorrect'}>
+                {answer}
+              </div>
+            ) : (
+              <></>
+            )}
           </form>
-        </div>
-        <div data-testid="answer">
-          {answer !== '' ? <div data-testid="answer">{answer}</div> : <></>}
         </div>
       </div>
     </div>
