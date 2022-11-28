@@ -4,10 +4,10 @@ import { ReactComponent as KelvinLogo } from './assets/kelvin-logo.svg';
 import { ReactComponent as FahrenheitLogo } from './assets/fahrenheit-logo.svg';
 import { ReactComponent as RankineLogo } from './assets/rankine-logo.svg';
 import './App.css';
-import { convertTemperature } from './services/TempratureService';
+import { convertTemperature } from './services/TemperatureService';
 
 function App() {
-  const tempratureUnits = ['Kelvin', 'Celcius', 'Fahrenheit', 'Rankine'];
+  const tempratureUnits = ['Kelvin', 'Celsius', 'Fahrenheit', 'Rankine'];
 
   const [tempIn, setTempIn] = useState('Kelvin');
   const [tempOut, setTempOut] = useState('Kelvin');
@@ -42,6 +42,7 @@ function App() {
       event.preventDefault();
     }
     const convertedTemp = convertTemperature(tempIn, tempOut, valueIn);
+    console.log(convertedTemp);
     if (parseFloat(valueOut, 10) === parseFloat(convertedTemp, 10)) {
       setAnswer('Correct');
     } else {
@@ -71,7 +72,7 @@ function App() {
               <input
                 aria-label="temp-input"
                 className="input"
-                type="text"
+                type="number"
                 placeholder="Enter temperature value"
                 value={valueIn}
                 onChange={onChangeValueIn}
@@ -114,7 +115,7 @@ function App() {
               <input
                 aria-label="temp-output"
                 className="input"
-                type="text"
+                type="number"
                 placeholder="Enter temperature value"
                 value={valueOut}
                 onChange={onChangeValueOut}
