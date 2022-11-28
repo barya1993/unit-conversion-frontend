@@ -121,3 +121,5 @@ Application endpoint (external facing - publicly available): http://34.160.97.48
     7. Proper versioning of code, docker images, terraform
 
     8. Depending on application requirement, implementation of DR
+
+![Alt text](./assets/CICD_Architecture.jpeg?raw=true "Title")
