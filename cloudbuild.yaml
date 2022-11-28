@@ -1,6 +1,5 @@
 steps:
 # Pull the existing image
-# Whitespace deploy
  - name: 'gcr.io/cloud-builders/docker'
    entrypoint: 'bash'
    args:
