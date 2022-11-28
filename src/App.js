@@ -17,17 +17,21 @@ function App() {
 
   const isSubmitEnabled = valueIn.length > 0 && valueOut.length > 0;
 
+  const clearAnswer = () => setAnswer('');
+
   const onChangeValueIn = (event) => {
     const value = event.currentTarget.value;
     setValueIn(value);
   };
 
   const handleTempInChange = (event) => {
+    clearAnswer();
     const value = event.target.value;
     setTempIn(value);
   };
 
   const handleTempOutChange = (event) => {
+    clearAnswer();
     const value = event.target.value;
     setTempOut(value);
   };
@@ -76,6 +80,7 @@ function App() {
                 placeholder="Enter temperature value"
                 value={valueIn}
                 onChange={onChangeValueIn}
+                onFocus={clearAnswer}
               />
             </div>
             <label className="form-label">Temprature unit</label>
@@ -119,6 +124,7 @@ function App() {
                 placeholder="Enter temperature value"
                 value={valueOut}
                 onChange={onChangeValueOut}
+                onFocus={clearAnswer}
               />
             </div>
             <div>
