@@ -1,4 +1,3 @@
-
 # Getting Started with Temperature Unit Conversion
 
 ## Problem Statement
@@ -8,6 +7,7 @@ browser. In their “Unit Conversion” science unit, they want to assign studen
 problems on paper worksheets. After students turn in their completed worksheet, the teachers
 want to be able to enter the questions and student responses into a computer to be graded.
 Students will convert:
+
 1. Temperatures between Kelvin, Celsius, Fahrenheit, and Rankine
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -30,12 +30,14 @@ Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run lint:check`
+
 ### `npm run lint:fix`
 
 Statically analyzes your code with ESLint to quickly find problems.\
 See the section about [eslint](https://eslint.org/docs/latest/) for more information.
 
 ### `npm run prettier:check`
+
 ### `npm run prettier:fix`
 
 Enforce a consistent style by parsing your code and formatting it as per defined rules with Prettier.\
@@ -122,4 +124,4 @@ Application endpoint (external facing - publicly available): http://34.160.97.48
 
     8. Depending on application requirement, implementation of DR
 
-![Alt text](./assets/CICD_Architecture.jpeg?raw=true "Title")
+![Alt text](./assets/CICD_Architecture.jpeg?raw=true 'Title')
