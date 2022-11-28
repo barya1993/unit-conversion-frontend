@@ -131,9 +131,7 @@ function App() {
               <input disabled={!isSubmitEnabled} className="input" type="submit" value="Submit" />
             </div>
             {answer !== '' ? (
-              <div data-testid="answer" className={answer === 'Correct' ? 'correct' : 'incorrect'}>
-                {answer}
-              </div>
+              <div className={answer === 'Correct' ? 'correct' : 'incorrect'}>{answer}</div>
             ) : (
               <></>
             )}

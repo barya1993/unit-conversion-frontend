@@ -41,7 +41,7 @@ describe('<App />', () => {
   });
 
   it('Test submit button disable correctly', () => {
-    const { getByTestId, getByRole, getByLabelText } = render(<App />);
+    const { getByRole, getByLabelText } = render(<App />);
     const input = getByLabelText('temp-input');
     const output = getByLabelText('temp-output');
     const button = getByRole('button', { name: 'Submit' });
