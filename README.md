@@ -126,5 +126,6 @@ Application endpoint (external facing - publicly available): http://34.160.97.48
 
 ![Alt text](./assets/CICD_Architecture.jpeg?raw=true 'Title')
 
+### Application UI
 
 ![Alt text](./assets/APP_UI.png?raw=true 'Title')
